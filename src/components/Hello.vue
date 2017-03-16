@@ -131,7 +131,6 @@
         height: 100%;
         width: 100%;
         font-family: 'Josefin Sans', sans-serif;
-        /*font-weight: bold;*/
     }
     
     .modal {
