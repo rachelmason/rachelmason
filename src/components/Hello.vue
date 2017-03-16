@@ -111,14 +111,16 @@
     .flex-item {
         border: 3px solid rgb(122, 112, 102);
         padding: 20px;
+        text-align: center;
     }
     
     .flex-container {
-        height: 100%;
+        height: 87%;
         width: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
+        flex-direction: row;
     }
     
     h1 {

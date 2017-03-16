@@ -21,30 +21,42 @@
                            <a data-target="modal1" @click="openModal"> <i class="fa fa-envelope" aria-hidden="true"></i> ramason@icloud.com</a>
                         </h5>
                     </div>
+                        
+                    <!--<div class="arrow"><h1> ⇟</h1>  </div>-->
 
                 </div>
             </div>
         </div>
 
         <div class="row bg-body">
-            <div class="col-md-12 heading">
-                <div>
-                    <h1 class="heading">Projects I've Worked On</h1>
-                </div>
-                <div class="flex-container2">
-
-                    <div class="flex-square">
-                        <h5>resume</h5>
-                        <a href="rachelmason.me/resume"><img src="../assets/resume.png" alt=""> </a>
-                    </div>
-                    <div class="flex-square">PROJECT 2</div>
-                    <div class="flex-square">PROJECT 3</div>
-                    <div class="flex-square">PROJECT 4</div>
-                    <div class="flex-square">PROJECT 5</div>
-                    <div class="flex-square">PROJECT 6</div>
-
-                </div>
-            </div>
+                   <div class="slider">
+    <ul class="slides">
+      <li>
+        <img src="../assets/resume.png"> 
+        <div class="caption left-align">
+          <h3>resume</h3>
+        </div>
+      </li>
+      <li>
+        <img src="http://lorempixel.com/580/250/nature/2"> 
+        <div class="caption left-align">
+          <h3>next portfolio piece</h3>
+        </div>
+      </li>
+      <li>
+        <img src="http://lorempixel.com/580/250/nature/3"> 
+        <div class="caption left-align">
+          <h3>last portfolio piece</h3>
+        </div>
+      </li>
+      <li>
+        <img src="http://lorempixel.com/580/250/nature/4"> 
+        <div class="caption left-align">
+          <h3>hey mom, look i'm on the internet</h3>
+        </div>
+      </li>
+    </ul>
+  </div>
         </div>
         
         <div id="modal1" class="modal">
@@ -89,6 +101,15 @@
                 msg: 'Welcome to Your Vue.js App'
             }
         },
+        mounted() {
+            $(document).ready(function() {
+                $('.slider').slider({
+                    height: 900,
+                    interval: 12000
+                });
+            });
+
+        },
         methods: {
             openModal() {
 
@@ -100,76 +121,19 @@
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style>
     #portfolio {
         font-family: 'Josefin Sans', sans-serif;
     }
     
-    .modal {
-        max-height: 43%;
-    }
-    
-    .resume {
-        align-self: flex-end;
-        align-items: flex-end;
-        color: rgb(237, 226, 215);
-        font-family: 'Didot';
-    }
-    
-    .resume:hover {
-        align-self: flex-end;
-        align-items: flex-end;
-        color: rgb(122, 112, 102);
-        font-family: 'Didot';
-    }
-    
-    .heading {
-        color: rgb(122, 112, 102);
-    }
-    
-    .maintext {
-        font-family: 'Josefin Sans', sans-serif;
-        color: #4f5161;
-    }
-    
-    .sub-text {
-        font-family: 'Josefin Sans', sans-serif;
-        color: #4f5161;
-    }
-    
-    a {
-        font-family: 'Josefin Sans', sans-serif;
-        color: #4f5161;
-    }
-    
-    a:hover {
-        font-family: 'Josefin Sans', sans-serif;
-        color: rgb(237, 226, 215);
-        text-decoration: none;
-    }
-    
     .bg-pic {
         background-image: url(https://scontent-sea1-1.xx.fbcdn.net/v/t1.0-9/1798609_924146140929829_2755872486769183154_n.jpg?oh=2fd0ddb09a177dd111901aa375eeb317&oe=5912E4CF);
-        height: 80vh;
+        height: 98vh;
         background-size: cover;
         background-position: center;
         position: relative;
         background-repeat: no-repeat;
         background-attachment: fixed;
-    }
-    
-    .bg-pic-bottom {
-        background-image: url(https://scontent-sea1-1.xx.fbcdn.net/v/t1.0-9/1798609_924146140929829_2755872486769183154_n.jpg?oh=2fd0ddb09a177dd111901aa375eeb317&oe=5912E4CF);
-        height: 52vh;
-        background-size: cover;
-        background-position: center;
-        position: relative;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-    }
-    
-    .bg-body {
-        height: 88vh;
     }
     
     .big-box {
@@ -181,114 +145,17 @@
         flex-wrap: wrap;
     }
     
-    .flex-container {
-        padding: 60px;
-        height: 100%;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    
-    .flex-container2 {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100%;
-        width: 100%;
-        flex-wrap: wrap;
-    }
-    
-    .flex-item {
-        background: rgba(24, 24, 24, .1);
-        height: 26vh;
-        width: 60vw;
-        margin: 10%;
-    }
-    
-    .flex-square {
-        height: 34vh;
-        width: 24vw;
-        margin: 1%;
-        background: rgba(24, 24, 24, .1);
+    .arrow {
+        /*position: fixed;*/
+        bottom: 0;
+        color: rgb(237, 226, 215);
     }
     
     img {
-        height: 27vh;
-        width: 23vw;
-        margin: 1%;
+        height: 100%;
     }
     
-    .btn-floating {
+    .slider .indicators .indicator-item.active {
         background-color: rgb(122, 112, 102);
-    }
-    
-    .btn-floating:hover {
-        background-color: rgb(237, 226, 215);
-    }
-    
-    .btn-floating:focus {
-        background-color: rgb(237, 226, 215);
-    }
-    
-    .btn {
-        background-color: rgb(122, 112, 102);
-        color: white;
-    }
-    
-    .btn:hover {
-        background-color: rgb(122, 112, 102);
-    }
-    
-    .btn:focus {
-        background-color: rgb(122, 112, 102);
-    }
-    /* label color */
-    
-    .input-field label {
-        color: rgb(122, 112, 102);
-    }
-    /* label focus color */
-    
-    .input-field input[type=text]:focus+label {
-        color: rgb(122, 112, 102);
-    }
-    /* label underline focus color */
-    
-    .input-field input[type=text]:focus {
-        border-bottom: 1px solid rgb(122, 112, 102);
-        box-shadow: 0 1px 0 0 rgb(122, 112, 102);
-    }
-    
-    .input-field input[type=email]:focus {
-        border-bottom: 1px solid rgb(122, 112, 102);
-        box-shadow: 0 1px 0 0 rgb(122, 112, 102);
-    }
-    
-    .input-field input[type=textarea]:focus {
-        border-bottom: 1px solid rgb(122, 112, 102);
-        box-shadow: 0 1px 0 0 rgb(122, 112, 102);
-    }
-    /* valid color */
-    
-    .input-field input[type=text].valid {
-        border-bottom: 1px solid rgb(122, 112, 102);
-        box-shadow: 0 1px 0 0 rgb(122, 112, 102);
-    }
-    /* invalid color */
-    
-    .input-field input[type=text].invalid {
-        border-bottom: 1px solid rrgb(122, 112, 102);
-        box-shadow: 0 1px 0 0 rgb(122, 112, 102);
-    }
-    /* icon prefix focus color */
-    
-    .input-field .prefix.active {
-        color: rgb(122, 112, 102);
-    }
-    
-    textarea.materialize-textarea:focus:not([readonly]) {
-        border-bottom: 1px solid rgb(122, 112, 102);
-        box-shadow: 0 1px 0 0 rgb(122, 112, 102);
     }
 </style>
