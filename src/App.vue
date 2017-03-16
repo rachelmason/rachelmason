@@ -1,11 +1,12 @@
 <template>
   <div id="app">
-  
+  <navbar></navbar>
     <router-view></router-view>
   </div>
 </template>
 
 <script>
+
 export default {
   name: 'app'
 }
@@ -18,6 +19,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  height: 100vh;
+  
 }
 </style>

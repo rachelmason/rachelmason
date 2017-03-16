@@ -1,13 +1,16 @@
 <template>
-<div id="hello">
-    <div class="nav">
+  <div id="portfolio">
+   
+        <div class="row bg-pic">
+         <div class="nav">
         <div class="nav-item"><router-link to="/">home</router-link></div>
         <div class="nav-item"><router-link to="/resume">resume</router-link></div>
         <div class="nav-item"><router-link to="/portfolio">portfolio</router-link></div>
     </div>
+            <div class="col-md-12 big-box">
                 <div class="flex-container">
                     <div class="flex-item">
-                        <h1 class="heading">RACHEL MASON</h1>
+                          <h1 class="heading">RACHEL MASON</h1>
                         
                         <h5 class="heading">A self-motivated web developer who thinks like a marketer. </h5>
 
@@ -17,10 +20,34 @@
                             <i class="fa fa-instagram" aria-hidden="true"></i> <a href="https://www.instagram.com/raemase/">raemase</a>
                            <a data-target="modal1" @click="openModal"> <i class="fa fa-envelope" aria-hidden="true"></i> ramason@icloud.com</a>
                         </h5>
-
                     </div>
+
                 </div>
-                     <div id="modal1" class="modal">
+            </div>
+        </div>
+
+        <div class="row bg-body">
+            <div class="col-md-12 heading">
+                <div>
+                    <h1 class="heading">Projects I've Worked On</h1>
+                </div>
+                <div class="flex-container2">
+
+                    <div class="flex-square">
+                        <h5>resume</h5>
+                        <a href="rachelmason.me/resume"><img src="../assets/resume.png" alt=""> </a>
+                    </div>
+                    <div class="flex-square">PROJECT 2</div>
+                    <div class="flex-square">PROJECT 3</div>
+                    <div class="flex-square">PROJECT 4</div>
+                    <div class="flex-square">PROJECT 5</div>
+                    <div class="flex-square">PROJECT 6</div>
+
+                </div>
+            </div>
+        </div>
+        
+        <div id="modal1" class="modal">
             <div class="modal-content">
                 <form  action="https://formspree.io/ramason@icloud.com" method="POST">
                         <div class="row">
@@ -53,11 +80,14 @@
         </div>
 </div>
 </template>
+
 <script>
     export default {
-        name: 'hello',
-        components: {
-
+        name: 'portfolio',
+        data() {
+            return {
+                msg: 'Welcome to Your Vue.js App'
+            }
         },
         methods: {
             openModal() {
@@ -66,21 +96,31 @@
                 $('#loginModal').modal('open');
             }
         }
-
     }
 </script>
-<style>
-    .nav-item {
-        font-family: 'Lato', sans-serif;
-        color: rgb(122, 112, 102);
-        font-size: 25px;
-        margin-top: 10px;
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped>
+    #portfolio {
+        font-family: 'Josefin Sans', sans-serif;
     }
     
-    .nav {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
+    .modal {
+        max-height: 43%;
+    }
+    
+    .resume {
+        align-self: flex-end;
+        align-items: flex-end;
+        color: rgb(237, 226, 215);
+        font-family: 'Didot';
+    }
+    
+    .resume:hover {
+        align-self: flex-end;
+        align-items: flex-end;
+        color: rgb(122, 112, 102);
+        font-family: 'Didot';
     }
     
     .heading {
@@ -108,12 +148,41 @@
         text-decoration: none;
     }
     
-    .flex-item {
-        border: 3px solid rgb(122, 112, 102);
-        padding: 20px;
+    .bg-pic {
+        background-image: url(https://scontent-sea1-1.xx.fbcdn.net/v/t1.0-9/1798609_924146140929829_2755872486769183154_n.jpg?oh=2fd0ddb09a177dd111901aa375eeb317&oe=5912E4CF);
+        height: 80vh;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+    
+    .bg-pic-bottom {
+        background-image: url(https://scontent-sea1-1.xx.fbcdn.net/v/t1.0-9/1798609_924146140929829_2755872486769183154_n.jpg?oh=2fd0ddb09a177dd111901aa375eeb317&oe=5912E4CF);
+        height: 52vh;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+    
+    .bg-body {
+        height: 88vh;
+    }
+    
+    .big-box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        flex-wrap: wrap;
     }
     
     .flex-container {
+        padding: 60px;
         height: 100%;
         width: 100%;
         display: flex;
@@ -121,21 +190,45 @@
         align-items: center;
     }
     
-    h1 {
-        line-height: 28%;
-    }
-    
-    #hello {
-        background: url(https://scontent-sea1-1.xx.fbcdn.net/v/t1.0-9/1798609_924146140929829_2755872486769183154_n.jpg?oh=2fd0ddb09a177dd111901aa375eeb317&oe=5912E4CF)no-repeat center center fixed;
-        background-size: cover;
+    .flex-container2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         height: 100%;
         width: 100%;
-        font-family: 'Josefin Sans', sans-serif;
-        /*font-weight: bold;*/
+        flex-wrap: wrap;
     }
     
-    .modal {
-        max-height: 43%;
+    .flex-item {
+        background: rgba(24, 24, 24, .1);
+        height: 26vh;
+        width: 60vw;
+        margin: 10%;
+    }
+    
+    .flex-square {
+        height: 34vh;
+        width: 24vw;
+        margin: 1%;
+        background: rgba(24, 24, 24, .1);
+    }
+    
+    img {
+        height: 27vh;
+        width: 23vw;
+        margin: 1%;
+    }
+    
+    .btn-floating {
+        background-color: rgb(122, 112, 102);
+    }
+    
+    .btn-floating:hover {
+        background-color: rgb(237, 226, 215);
+    }
+    
+    .btn-floating:focus {
+        background-color: rgb(237, 226, 215);
     }
     
     .btn {
