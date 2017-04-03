@@ -33,9 +33,39 @@
         <br>
         <br>
       <div class="col s12 flexIt">
-        <div class="portfolio"><img src="http://placehold.it/800x500" alt=""></div>
-        <div class="portfolio"><img src="http://placehold.it/800x500" alt=""></div>
-
+          <a href="https://rachelmason.github.io/keepr">
+        <div class="portfolio"><img src="../assets/keepr.png" alt="" >
+        <div class="imgDescription">
+        <ul class="imgText">
+            <li>based on pinterest</li>
+            <li>view all public keeps</li>
+            <li>search keeps based off of keywords</li>
+            <li>create public or private keeps</li>
+            <li>create vaults</li>
+            <li>add keeps to personal vaults</li>
+            </ul>
+        </div>
+        </div>
+          </a>
+          <a href="https://rachelmason.github.io/passafist">
+        <div class="portfolio"><img src="../assets/passafist.png" alt="" >
+        <div class="imgDescription">
+        <ul class="imgText">
+            <li>group project based off of the card game, <a href="pass-a-fist.net"></a>Pass-A-Fist</li>
+            <li>project utilized partner programming</li>
+            <li>worked mostly on:</li>
+            <ul>
+            <li>design aspects</li>
+            <li>mobile responsiveness</li>
+            </ul>
+            <li>assisted with:</li>
+            <ul>
+            <li>game logic</li>
+            </ul>
+            </ul>
+        </div>
+        </div>
+          </a>
       </div>
         </div>
 
@@ -138,7 +168,7 @@
                 <div class="input-field col s12">
                   <textarea name="message" class="materialize-textarea" placeholder="let's talk" cols="30" rows="10" required="" aria-required="true"></textarea>
                 </div>
-                <input type="hidden" name="_next" value="/resume" />
+                <input type="hidden" name="_next" value="www.rachelmason.me" />
               </div>
               <div class="input-field col s1">
 
@@ -235,6 +265,18 @@
         position: fixed;
     }
     
+    .imgText {
+        margin: 16px;
+    }
+    
+    .imgText>a {
+        color: white;
+    }
+    
+    .imgText>ul>li {
+        margin-left: 20px;
+    }
+    
     h5 {
         line-height: 77%;
     }
@@ -246,12 +288,34 @@
         flex-wrap: wrap;
     }
     
+    .move {
+        position: fixed;
+        bottom: 0;
+        left: 0
+    }
+    
     .portfolio {
         position: relative;
         margin: 2%;
     }
     
-    .portfolio:after {
+    .imgDescription {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: #fcdcc2;
+        color: #fff;
+        visibility: hidden;
+        opacity: 0;
+    }
+    
+    .portfolio:hover .imgDescription {
+        visibility: visible;
+        opacity: 1;
+    }
+    /*.portfolio:after {
         position: absolute;
         content: "";
         top: 0;
@@ -260,11 +324,7 @@
         height: 100%;
         opacity: 0;
         background-color: #ffb375;
-    }
-    
-    .portfolio:hover:after {
-        opacity: .3;
-    }
+    }*/
     
     .big {
         height: 86vh;
@@ -448,7 +508,8 @@
     }
     
     li {
-        opacity: 0;
+        font-family: 'Source Code Pro', monospace;
+        color: black;
     }
     
     a {
@@ -480,6 +541,10 @@
     
     .btn:focus {
         background-color: #ffb375;
+    }
+    
+    img {
+        width: 100%;
     }
     
     .progress .determinate {
