@@ -48,7 +48,7 @@
         </div>
           </a>
           <a href="https://rachelmason.github.io/passafist">
-        <div class="portfolio"><img src="../assets/passafist.png" alt="" >
+        <div class="portfolio"><img src="../assets/passafist.png" alt="Card Game" >
         <div class="imgDescription">
         <ul class="imgText">
             <li>group project based off of the card game, <a href="pass-a-fist.net"></a>Pass-A-Fist</li>
