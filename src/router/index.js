@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Hello from '@/components/Hello'
-import Portfolio from '@/components/Portfolio'
+
 
 Vue.use(Router)
 
@@ -11,10 +11,6 @@ export default new Router({
             name: 'Hello',
             component: Hello
         },
-        {
-            path: '/portfolio',
-            name: 'Portfolio',
-            component: Portfolio
-        }
+
     ]
 })
